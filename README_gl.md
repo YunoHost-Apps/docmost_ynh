@@ -29,7 +29,7 @@ NON debe editarse manualmente.
 - File attachment
 
 
-**Versión proporcionada:** 0.3.1~ynh1
+**Versión proporcionada:** 0.5.0~ynh1
 
 ## Capturas de pantalla
 
