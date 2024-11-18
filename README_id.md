@@ -29,7 +29,7 @@ Ini TIDAK boleh diedit dengan tangan.
 - File attachment
 
 
-**Versi terkirim:** 0.3.1~ynh1
+**Versi terkirim:** 0.5.0~ynh1
 
 ## Tangkapan Layar
 

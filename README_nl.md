@@ -29,7 +29,7 @@ Hij mag NIET handmatig aangepast worden.
 - File attachment
 
 
-**Geleverde versie:** 0.3.1~ynh1
+**Geleverde versie:** 0.5.0~ynh1
 
 ## Schermafdrukken
 

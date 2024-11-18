@@ -29,7 +29,7 @@ No se debe editar a mano.
 - File attachment
 
 
-**Versión actual:** 0.3.1~ynh1
+**Versión actual:** 0.5.0~ynh1
 
 ## Capturas
 

@@ -29,7 +29,7 @@ It shall NOT be edited by hand.
 - File attachment
 
 
-**Shipped version:** 0.3.1~ynh1
+**Shipped version:** 0.5.0~ynh1
 
 ## Screenshots
 
