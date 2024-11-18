@@ -3,47 +3,56 @@ N.B.: README ini dibuat secara otomatis oleh <https://github.com/YunoHost/apps/t
 Ini TIDAK boleh diedit dengan tangan.
 -->
 
-# do•doc untuk YunoHost
+# Docmost untuk YunoHost
 
-[![Tingkat integrasi](https://dash.yunohost.org/integration/dodoc.svg)](https://ci-apps.yunohost.org/ci/apps/dodoc/) ![Status kerja](https://ci-apps.yunohost.org/ci/badges/dodoc.status.svg) ![Status pemeliharaan](https://ci-apps.yunohost.org/ci/badges/dodoc.maintain.svg)
+[![Tingkat integrasi](https://dash.yunohost.org/integration/docmost.svg)](https://ci-apps.yunohost.org/ci/apps/docmost/) ![Status kerja](https://ci-apps.yunohost.org/ci/badges/docmost.status.svg) ![Status pemeliharaan](https://ci-apps.yunohost.org/ci/badges/docmost.maintain.svg)
 
-[![Pasang do•doc dengan YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=dodoc)
+[![Pasang Docmost dengan YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=docmost)
 
 *[Baca README ini dengan bahasa yang lain.](./ALL_README.md)*
 
-> *Paket ini memperbolehkan Anda untuk memasang do•doc secara cepat dan mudah pada server YunoHost.*  
+> *Paket ini memperbolehkan Anda untuk memasang Docmost secara cepat dan mudah pada server YunoHost.*  
 > *Bila Anda tidak mempunyai YunoHost, silakan berkonsultasi dengan [panduan](https://yunohost.org/install) untuk mempelajari bagaimana untuk memasangnya.*
 
 ## Ringkasan
 
-Designed to document and create stories from hands-on activities, do•doc (pronounced doudoc) is a composite, open-source, modular tool that allows you to capture media (photos, videos, sounds, and stop-motion), edit them, lay them out, and publish them. Its composite aspect allows it to be reconfigured so that it is as adapted as possible to the situation in which it is deployed.
+### Features
 
-**Versi terkirim:** 11.1.3~ynh2
+- Real-time collaboration
+- Diagrams (Draw.io, Excalidraw and Mermaid)
+- Spaces
+- Permissions management
+- Groups
+- Comments
+- Page history
+- Search
+- File attachment
 
-**Demo:** <https://test.dodoc.fr/>
+
+**Versi terkirim:** 0.3.1~ynh1
 
 ## Tangkapan Layar
 
-![Tangkapan Layar pada do•doc](./doc/screenshots/screenshot.png)
+![Tangkapan Layar pada Docmost](./doc/screenshots/screenshot.png)
 
 ## Dokumentasi dan sumber daya
 
-- Website aplikasi resmi: <https://dodoc.fr/>
-- Dokumentasi admin resmi: <https://github.com/l-atelier-des-chercheurs/dodoc#readme>
-- Depot kode aplikasi hulu: <https://github.com/l-atelier-des-chercheurs/dodoc>
-- Gudang YunoHost: <https://apps.yunohost.org/app/dodoc>
-- Laporkan bug: <https://github.com/YunoHost-Apps/dodoc_ynh/issues>
+- Website aplikasi resmi: <https://docmost.com/>
+- Dokumentasi admin resmi: <https://docmost.com/docs/>
+- Depot kode aplikasi hulu: <https://github.com/docmost/docmost>
+- Gudang YunoHost: <https://apps.yunohost.org/app/docmost>
+- Laporkan bug: <https://github.com/YunoHost-Apps/docmost_ynh/issues>
 
 ## Info developer
 
-Silakan kirim pull request ke [`testing` branch](https://github.com/YunoHost-Apps/dodoc_ynh/tree/testing).
+Silakan kirim pull request ke [`testing` branch](https://github.com/YunoHost-Apps/docmost_ynh/tree/testing).
 
 Untuk mencoba branch `testing`, silakan dilanjutkan seperti:
 
 ```bash
-sudo yunohost app install https://github.com/YunoHost-Apps/dodoc_ynh/tree/testing --debug
+sudo yunohost app install https://github.com/YunoHost-Apps/docmost_ynh/tree/testing --debug
 atau
-sudo yunohost app upgrade dodoc -u https://github.com/YunoHost-Apps/dodoc_ynh/tree/testing --debug
+sudo yunohost app upgrade docmost -u https://github.com/YunoHost-Apps/docmost_ynh/tree/testing --debug
 ```
 
 **Info lebih lanjut mengenai pemaketan aplikasi:** <https://yunohost.org/packaging_apps>

@@ -3,47 +3,56 @@ Nota bene : ce README est automatiquement généré par <https://github.com/Yu
 Il NE doit PAS être modifié à la main.
 -->
 
-# do•doc pour YunoHost
+# Docmost pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/dodoc.svg)](https://ci-apps.yunohost.org/ci/apps/dodoc/) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/dodoc.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/dodoc.maintain.svg)
+[![Niveau d’intégration](https://dash.yunohost.org/integration/docmost.svg)](https://ci-apps.yunohost.org/ci/apps/docmost/) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/docmost.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/docmost.maintain.svg)
 
-[![Installer do•doc avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=dodoc)
+[![Installer Docmost avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=docmost)
 
 *[Lire le README dans d'autres langues.](./ALL_README.md)*
 
-> *Ce package vous permet d’installer do•doc rapidement et simplement sur un serveur YunoHost.*  
+> *Ce package vous permet d’installer Docmost rapidement et simplement sur un serveur YunoHost.*  
 > *Si vous n’avez pas YunoHost, consultez [ce guide](https://yunohost.org/install) pour savoir comment l’installer et en profiter.*
 
 ## Vue d’ensemble
 
-Conçu pour documenter et créer des récits à partir d'activités pratiques, do•doc (prononcer doudoc) est un outil composite, libre et modulaire, qui permet de capturer des médias (photos, vidéos, sons et stop-motion), de les éditer, de les mettre en page et de les publier. Son aspect composite permet de le reconfigurer de manière à ce qu'il soit le plus adapté possible à la situation dans laquelle il est déployé.
+### Features
 
-**Version incluse :** 11.1.3~ynh2
+- Real-time collaboration
+- Diagrams (Draw.io, Excalidraw and Mermaid)
+- Spaces
+- Permissions management
+- Groups
+- Comments
+- Page history
+- Search
+- File attachment
 
-**Démo :** <https://test.dodoc.fr/>
+
+**Version incluse :** 0.3.1~ynh1
 
 ## Captures d’écran
 
-![Capture d’écran de do•doc](./doc/screenshots/screenshot.png)
+![Capture d’écran de Docmost](./doc/screenshots/screenshot.png)
 
 ## Documentations et ressources
 
-- Site officiel de l’app : <https://dodoc.fr/>
-- Documentation officielle de l’admin : <https://github.com/l-atelier-des-chercheurs/dodoc#readme>
-- Dépôt de code officiel de l’app : <https://github.com/l-atelier-des-chercheurs/dodoc>
-- YunoHost Store : <https://apps.yunohost.org/app/dodoc>
-- Signaler un bug : <https://github.com/YunoHost-Apps/dodoc_ynh/issues>
+- Site officiel de l’app : <https://docmost.com/>
+- Documentation officielle de l’admin : <https://docmost.com/docs/>
+- Dépôt de code officiel de l’app : <https://github.com/docmost/docmost>
+- YunoHost Store : <https://apps.yunohost.org/app/docmost>
+- Signaler un bug : <https://github.com/YunoHost-Apps/docmost_ynh/issues>
 
 ## Informations pour les développeurs
 
-Merci de faire vos pull request sur la [branche `testing`](https://github.com/YunoHost-Apps/dodoc_ynh/tree/testing).
+Merci de faire vos pull request sur la [branche `testing`](https://github.com/YunoHost-Apps/docmost_ynh/tree/testing).
 
 Pour essayer la branche `testing`, procédez comme suit :
 
 ```bash
-sudo yunohost app install https://github.com/YunoHost-Apps/dodoc_ynh/tree/testing --debug
+sudo yunohost app install https://github.com/YunoHost-Apps/docmost_ynh/tree/testing --debug
 ou
-sudo yunohost app upgrade dodoc -u https://github.com/YunoHost-Apps/dodoc_ynh/tree/testing --debug
+sudo yunohost app upgrade docmost -u https://github.com/YunoHost-Apps/docmost_ynh/tree/testing --debug
 ```
 
 **Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>
