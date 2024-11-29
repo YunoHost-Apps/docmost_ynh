@@ -44,6 +44,7 @@ ynh_script_progression "Installing $app..."
 
 pushd $install_dir
     ynh_hide_warnings corepack enable && corepack prepare pnpm@latest --activate
+    npm install -g nx@latest
     ynh_hide_warnings pnpm install --frozen-lockfile --prod
     ynh_hide_warnings pnpm build
 popd
