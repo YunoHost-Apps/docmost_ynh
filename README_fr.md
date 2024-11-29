@@ -29,7 +29,7 @@ Il NE doit PAS être modifié à la main.
 - File attachment
 
 
-**Version incluse :** 0.3.1~ynh1
+**Version incluse :** 0.5.0~ynh1
 
 ## Captures d’écran
 

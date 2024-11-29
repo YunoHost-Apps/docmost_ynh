@@ -29,7 +29,7 @@ EZ editatu eskuz.
 - File attachment
 
 
-**Paketatutako bertsioa:** 0.3.1~ynh1
+**Paketatutako bertsioa:** 0.5.0~ynh1
 
 ## Pantaila-argazkiak
 
