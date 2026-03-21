@@ -61,6 +61,7 @@ bind = "SMTP_SECURE:__INSTALL_DIR__/.env"
 [main.storage]
 name.en = "Storage"
 name.fr = "Stockage"
+
     [main.storage.doc_storage_driver]
     ask.en = "Storage driver"
     ask.fr = "Storage driver"

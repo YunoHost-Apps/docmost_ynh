@@ -7,7 +7,7 @@ description.en = "Collaborative wiki and documentation"
 description.fr = "Wiki collaboratif et documentation"
 version = "0.70.3~ynh1"
 
-maintainers = ["otm33GH"]
+maintainers = ["otm33GH", "eric_G"]
 
 [upstream]
 license = "GPL-3.0-only"

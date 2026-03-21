@@ -18,6 +18,7 @@ StartLimitInterval=600s
 StartLimitBurst=10
 
 # Sandboxing options to harden security
+
 # Details for these options: https://www.freedesktop.org/software/systemd/man/systemd.exec.html
 NoNewPrivileges=yes
 PrivateTmp=yes
