@@ -50,7 +50,7 @@ ynh_script_progression "Building $app..."
     ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=4096" NX_DAEMON=false NX_DISABLE_NX_CACHE=true pnpm run editor-ext:build
     ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=4096" NX_DAEMON=false NX_DISABLE_NX_CACHE=true pnpm run server:build
     ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=4096" NX_DAEMON=false NX_DISABLE_NX_CACHE=true pnpm run client:build
-
+    pnpm store prune
 popd
 
 
