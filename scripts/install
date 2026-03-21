@@ -20,7 +20,7 @@ email_smtp_host=$(cat /etc/yunohost/current_host)
 email_smtp_user="$app"
 email_smtp_password="$mail_pwd"
 email_smtp_port=587
-storage_driver=$storage_driver
+storage_driver=local
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
