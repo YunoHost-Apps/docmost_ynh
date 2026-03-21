@@ -69,8 +69,8 @@ ram.runtime = "500M"
 
     [resources.ports]
 
-    [resources.apt] 
-    packages = "postgresql redis-server"    
+    [resources.apt]
+    packages = "postgresql, redis-server"
     
     [resources.database]
     type = "postgresql"

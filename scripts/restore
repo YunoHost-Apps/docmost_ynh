@@ -22,7 +22,6 @@ ynh_script_progression "Restoring data directory..."
 
 ynh_restore "$data_dir"
 
-
 #=================================================
 # RESTORE THE POSTGRESQL DATABASE
 #=================================================
