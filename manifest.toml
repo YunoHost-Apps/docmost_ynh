@@ -1,35 +1,32 @@
-#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+#:schema https://raw.githubusercontent.com/YunoHost/apps/main/schemas/manifest.v2.schema.json
 
 packaging_format = 2
-
 id = "docmost"
 name = "Docmost"
-description.en = "Create, collaborate, and share knowledge"
-description.fr = "Créez, collaborez et partagez vos connaissances"
+description.en = "Collaborative wiki and documentation"
+description.fr = "Wiki collaboratif et documentation"
+version = "0.70.3~ynh1"
 
-version = "0.5.0~ynh1"
-
-maintainers = ["eric_G"]
+maintainers = ["otm33GH"]
 
 [upstream]
-license = "AGPL-3.0-only"
+license = "GPL-3.0-only"
 website = "https://docmost.com/"
 admindoc = "https://docmost.com/docs/"
 code = "https://github.com/docmost/docmost"
 
 [integration]
-yunohost = ">= 11.2.30"
+yunohost = ">= 12.1.39"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 
 ldap = false
-
 sso = false
 
-disk = "512M"
-ram.build = "1000M"
-ram.runtime = "512M"
+disk = "2000M"
+ram.build = "1500M"
+ram.runtime = "500M"
 
 [install]
     [install.domain]
@@ -39,30 +36,45 @@ ram.runtime = "512M"
     type = "group"
     default = "visitors"
 
+    [install.mail_user]
+    type = "string"
+    ask.en = "Email from"
+    default = "no-reply"
+    
+    [install.storage_driver]
+    ask.en = "Storage driver"
+    ask.fr = "Storage driver"
+    type = "select"
+    choices = ["local", "s3"]
+    default = "local"
+    
 [resources]
-
     [resources.sources]
 
     [resources.sources.main]
-
-    url = "https://github.com/docmost/docmost/archive/refs/tags/v0.5.0.tar.gz"
-    sha256 = "3afd949252afc65a3759e7c0ac41f92a619da7b1be46aae4ca96ad0fa28f2033"
-
-    #autoupdate.strategy = "latest_github_tag"
+    url = "https://github.com/docmost/docmost/archive/refs/tags/v0.70.3.tar.gz"
+    sha256 = "d3838150906a4fd246bc452ca510b4e3c81942726a7feef89e87a266de56ddbf"
+    autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
-
+	allow_email = true
+     
     [resources.install_dir]
 
     [resources.data_dir]
-
+    
     [resources.permissions]
     main.url = "/"
+    main.auth_header = false
 
     [resources.ports]
 
-    [resources.apt]
-    packages = "postgresql, redis-server"
-
+    [resources.apt] 
+    packages = "postgresql redis-server"    
+    
     [resources.database]
     type = "postgresql"
+    
+    [resources.nodejs]
+    version = "22"
+    
