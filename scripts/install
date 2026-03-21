@@ -1,16 +1,26 @@
 #!/bin/bash
 
-source _common.sh
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
 source /usr/share/yunohost/helpers
 
-key=$(ynh_string_random --length=32) 
-
 #=================================================
-# INSTALL DEPENDENCIES
+# INITIALIZE AND STORE SETTINGS
 #=================================================
-ynh_script_progression "Installing dependencies..."
 
-ynh_nodejs_install
+max_upload_size=50
+auth_secret=$(ynh_string_random --length=32)
+ynh_app_setting_set --key=auth_secret --value="$auth_secret"
+
+ynh_app_setting_set --key=max_upload_size --value=$max_upload_size
+
+email_smtp_host=$(cat /etc/yunohost/current_host)
+email_smtp_user="$app"
+email_smtp_password="$mail_pwd"
+email_smtp_port=587
+storage_driver=$storage_driver
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -20,11 +30,29 @@ ynh_script_progression "Setting up source files..."
 ynh_setup_source --dest_dir="$install_dir"
 
 #=================================================
-# APP INITIAL CONFIGURATION
+# ADD A CONFIGURATION
 #=================================================
-ynh_script_progression "Adding $app's configuration files..."
+ynh_script_progression "Adding $app's configuration..."
 
 ynh_config_add --template=".env" --destination="$install_dir/.env"
+
+#=================================================
+# INSTALLATION
+#=================================================
+ynh_script_progression "Adding $app's dependencies..."
+
+pushd "$install_dir"
+
+	ynh_hide_warnings corepack enable && COREPACK_ENABLE_DOWNLOAD_PROMPT=0 corepack prepare pnpm@latest --activate
+	ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=4096" pnpm install --frozen-lockfile
+
+ynh_script_progression "Building $app..."
+    ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=4096" NX_DAEMON=false NX_DISABLE_NX_CACHE=true pnpm run editor-ext:build
+    ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=4096" NX_DAEMON=false NX_DISABLE_NX_CACHE=true pnpm run server:build
+    ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=4096" NX_DAEMON=false NX_DISABLE_NX_CACHE=true pnpm run client:build
+    pnpm store prune
+popd
+
 
 #=================================================
 # SYSTEM CONFIGURATION
@@ -33,28 +61,21 @@ ynh_script_progression "Adding system configurations related to $app..."
 
 ynh_config_add_nginx
 
-ynh_config_add_systemd
+ynh_config_add_systemd --service="$app" 
 
-yunohost service add "$app" --description="Create, collaborate, and share knowledge" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="Docmost" --log="/var/log/$app/$app.log"
 
-#=================================================
-# INSTALL DODOC
-#=================================================
-ynh_script_progression "Installing $app..."
+ynh_config_add_logrotate
 
-pushd $install_dir
-    ynh_hide_warnings corepack enable && corepack prepare pnpm@latest --activate
-    npm install -g nx@latest
-    ynh_hide_warnings pnpm install --frozen-lockfile --prod
-    ynh_hide_warnings pnpm build
-popd
+ln -s "$data_dir" "$install_dir/data"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service="$app" --action="start" --log_path="systemd"
+ynh_systemctl --service="$app" --action="start"
+ynh_systemctl --service=postfix --action="restart"
 
 #=================================================
 # END OF SCRIPT
