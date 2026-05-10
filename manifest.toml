@@ -5,7 +5,8 @@ id = "docmost"
 name = "Docmost"
 description.en = "Collaborative wiki and documentation"
 description.fr = "Wiki collaboratif et documentation"
-version = "0.70.3~ynh1"
+
+version = "0.80.2~ynh1"
 
 maintainers = ["otm33GH", "eric_G"]
 
@@ -35,22 +36,22 @@ ram.runtime = "500M"
     [install.init_main_permission]
     type = "group"
     default = "visitors"
-    
+
 [resources]
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/docmost/docmost/archive/refs/tags/v0.70.3.tar.gz"
-    sha256 = "d3838150906a4fd246bc452ca510b4e3c81942726a7feef89e87a266de56ddbf"
+    url = "https://github.com/docmost/docmost/archive/refs/tags/v0.80.2.tar.gz"
+    sha256 = "6dc76b49b42fe658bebca167d1a11202e84ee48bde8886a7edee7cdf23f54cbe"
     autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
 	allow_email = true
-     
+
     [resources.install_dir]
 
     [resources.data_dir]
-    
+
     [resources.permissions]
     main.url = "/"
     main.auth_header = false
@@ -59,10 +60,9 @@ ram.runtime = "500M"
 
     [resources.apt]
     packages = "postgresql, redis-server"
-    
+
     [resources.database]
     type = "postgresql"
-    
+
     [resources.nodejs]
     version = "22"
-    
