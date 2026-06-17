@@ -1,6 +1,9 @@
 #!/bin/bash
 
-source ../settings/scripts/_common.sh
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -10,10 +13,12 @@ ynh_script_progression "Restoring the app main directory..."
 
 ynh_restore "$install_dir"
 
+ynh_hide_warnings corepack enable && COREPACK_ENABLE_DOWNLOAD_PROMPT=0 corepack prepare pnpm@latest --activate
+
 #=================================================
 # RESTORE THE DATA DIRECTORY
 #=================================================
-ynh_script_progression "Restoring the data directory..."
+ynh_script_progression "Restoring data directory..."
 
 ynh_restore "$data_dir"
 
@@ -25,14 +30,7 @@ ynh_script_progression "Restoring the PostgreSQL database..."
 ynh_psql_db_shell < ./db.sql
 
 #=================================================
-# REINSTALL DEPENDENCIES
-#=================================================
-ynh_script_progression "Reinstalling dependencies..."
-
-ynh_nodejs_install
-
-#=================================================
-# RESTORE SYSTEM CONFIGURATIONS
+# RESTORE SYSTEM CONFIGURATION
 #=================================================
 ynh_script_progression "Restoring system configurations related to $app..."
 
@@ -41,14 +39,17 @@ ynh_restore "/etc/nginx/conf.d/$domain.d/$app.conf"
 ynh_restore "/etc/systemd/system/$app.service"
 systemctl enable "$app.service" --quiet
 
-yunohost service add "$app" --description="Create, collaborate, and share knowledge" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description=Docmost --log="/var/log/$app/$app.log"
+
+ynh_restore "/etc/logrotate.d/$app"
+ynh_restore "/var/log/$app/$app.log"
 
 #=================================================
-# RELOAD NGINX AND PHP-FPM OR THE APP SERVICE
+# RELOAD NGINX AND THE APP SERVICE
 #=================================================
 ynh_script_progression "Reloading NGINX web server and $app's service..."
 
-ynh_systemctl --service="$app" --action="start" --log_path="systemd"
+ynh_systemctl --service="$app" --action="start"
 
 ynh_systemctl --service=nginx --action=reload
 
