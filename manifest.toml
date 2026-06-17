@@ -6,7 +6,7 @@ name = "Docmost"
 description.en = "Collaborative wiki and documentation"
 description.fr = "Wiki collaboratif et documentation"
 
-version = "0.80.2~ynh1"
+version = "0.90.1~ynh1"
 
 maintainers = ["otm33GH", "eric_G"]
 
@@ -41,8 +41,8 @@ ram.runtime = "500M"
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/docmost/docmost/archive/refs/tags/v0.80.2.tar.gz"
-    sha256 = "6dc76b49b42fe658bebca167d1a11202e84ee48bde8886a7edee7cdf23f54cbe"
+    url = "https://github.com/orhtej2/docmost-build/releases/download/v0.90.1/docmost.tar.gz"
+    sha256 = "7a2a51213dd964f6c4bb09d2a77e79dca30bc20db8293920d1e4efeb296aa9ed"
     autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
