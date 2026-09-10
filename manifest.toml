@@ -6,7 +6,7 @@ name = "Docmost"
 description.en = "Collaborative wiki and documentation"
 description.fr = "Wiki collaboratif et documentation"
 
-version = "0.95.0~ynh1"
+version = "0.96.0~ynh1"
 
 maintainers = ["otm33GH", "eric_G"]
 
@@ -17,7 +17,7 @@ admindoc = "https://docmost.com/docs/"
 code = "https://github.com/docmost/docmost"
 
 [integration]
-yunohost = ">= 12.1.39"
+yunohost = ">= 12.1.40"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -41,8 +41,8 @@ ram.runtime = "500M"
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/orhtej2/docmost-build/releases/download/v0.95.0/docmost.tar.gz"
-    sha256 = "5e553f73f5c6556959b87e3c27754f21e1b299f45574a2f3b9eada843fca7223"
+    url = "https://github.com/orhtej2/docmost-build/releases/download/v0.96.0/docmost.tar.gz"
+    sha256 = "7c7d70918331bffc2df108d22557b79661bf9817606349cbd0acbb8e1fe8eaf0"
     
     autoupdate.strategy = "latest_github_release"
     autoupdate.upstream = "https://github.com/orhtej2/docmost-build"
@@ -68,4 +68,4 @@ ram.runtime = "500M"
     type = "postgresql"
 
     [resources.nodejs]
-    version = "22"
+    version = "24"
