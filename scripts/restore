@@ -49,7 +49,7 @@ ynh_restore "/var/log/$app/$app.log"
 #=================================================
 ynh_script_progression "Reloading NGINX web server and $app's service..."
 
-ynh_systemctl --service="$app" --action="start"
+ynh_systemctl --service="$app" --action="start" --wait_until="Listening on http://127.0.0.1"
 
 ynh_systemctl --service=nginx --action=reload
 
