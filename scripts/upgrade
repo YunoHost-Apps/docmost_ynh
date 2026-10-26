@@ -48,7 +48,7 @@ yunohost service add "$app" --description="Docmost" --log="/var/log/$app/$app.lo
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service="$app" --action="start"
+ynh_systemctl --service="$app" --action="start" --wait_until="Listening on http://127.0.0.1"
 
 #=================================================
 # END OF SCRIPT
