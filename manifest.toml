@@ -42,7 +42,7 @@ ram.runtime = "500M"
 
     [resources.sources.main]
     url = "https://github.com/orhtej2/docmost-build/releases/download/v0.97.0/docmost.tar.gz"
-    sha256 = "e8f53dd9761bfdeceb47e729b675eb920d14b31b5ebfce712b26714a65d3cf03"
+    sha256 = "ffff58ad141bc3e559999b8b92d73f485357ef9b2558f07ab5d2d50f80fa1a63"
     
     autoupdate.strategy = "latest_github_release"
     autoupdate.upstream = "https://github.com/orhtej2/docmost-build"
